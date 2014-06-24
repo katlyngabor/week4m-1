@@ -1,14 +1,11 @@
 'use strict';
-// generated on 2014-06-23 using generator-tiy-webapp 0.0.0
-
-// Set your Github Repo Here
-var gh_repo = "";
+// generated on 2014-06-24 using generator-tiy-webapp 0.0.2
 
 // Require your modules
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var rimraf = require('rimraf');
-var deploy = require('gulp-gh-pages');
+var exec = require('child_process').exec;
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -111,11 +108,7 @@ gulp.task('default', ['clean'], function () {
   gulp.start('build');
 });
 
+// Push a subtree from our `dist` folder
 gulp.task('deploy', function() {
-  if(gh_repo !== ''){
-    gulp.src("./dist/**/*")
-      .pipe(deploy(gh_repo, 'origin'));
-  } else {
-    console.log('Oops!! You forgot to set your `gh_repo` variable in your gulpfile.js!');
-  }
+  exec('git subtree push --prefix dist origin gh-pages');
 });

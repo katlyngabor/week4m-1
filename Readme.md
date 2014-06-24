@@ -26,3 +26,5 @@ Americans rely heavily upon foods prepared by strangers, whether at a hotdog sta
 	 - Gluten free meals
 	 - Vegan meals
 	 - Paleo meals
+
+-A photo sharing option to allow consumers to add images of food. Another possibility could be an option that allows anonymous employee postings to show conditions of food prep.
